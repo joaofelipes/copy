@@ -24,9 +24,11 @@ function getMessage() {
             contentType: 'application/json; charset=utf-8',
             success: function(resultData) {
                     $("#message").val(resultData);
-                    //console.log(resultData);
+                    console.log('Received chars:' + resultData.length);
             },
             error : function(jqXHR, textStatus, errorThrown) {
+                        console.log('Status: ' + textStatus);
+                        console.log('Error: ' + errorThrown); 
             },
             timeout: 120000,
     });
