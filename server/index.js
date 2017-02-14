@@ -18,6 +18,7 @@ var message = 'You are not expected to understand this.';
 // Definir um endpoint de get da API
 app.get('/copy/get_message', function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin','*');
+  console.log('Sent chars: '+ message.length);
   res.send(message);
 })
 
