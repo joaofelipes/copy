@@ -12,14 +12,23 @@
   	<script src="js/script.js"></script>
 </head>
 <body>
-	<div id="main" class="container">
-		<form class="form-horizontal" action='http://localhost:9000/put' method='post'>
-			<div class="form-group container">
-    			<label for="exampleTextarea">Text to transfer:</label>
-    			<textarea class="form-control" id="message" name="message" rows="6"></textarea>
-  			</div>
-			<div class="col-sm-12">
-				<button type="button" class="btn btn-success btn-block btnok">OK</button>
+	<div id="main" class="container-fluid">
+		<form class="form-horizontal">
+			<div class="row">
+				<div class=custom-textarea>
+					<div class="form-group">
+						<label for="Textarea">Text to transfer:</label>
+						<textarea class="form-control" id="message" name="message" rows="8" maxlength="3000"></textarea>
+					</div>
+				</div>
+			</div>
+  			<div class="row">
+				<div class="col-xs-6 text-center">
+					<button type="button" class="btn btn-success btnok">Send Text</button>
+				</div>
+				<div class="col-xs-6 text-center">
+					<button type="button" class="btn btn-info btnget">Get Text</button>
+				</div>
 			</div>
 		</form>
 	</div>

@@ -1,10 +1,9 @@
 function submitMessage() {
           jQuery.support.cors = true;
           $.ajax({
-            url: "http://localhost/api/copy/send_message",
+            url: "http://joaofelipes.duckdns.org/api/copy/send_message",
             crossDomain: true,
             type: "POST",
-            //data: JSON.stringify(message),
             data: { message: $("#message").val() },
             dataType: "application/x-www-form-urlencoded",
             success: function (response) {
@@ -17,24 +16,24 @@ function submitMessage() {
         });
 }
 
-$( document ).ready(function(){
-    $( ".btnok" ).on( "click", submitMessage );
-
+function getMessage() {
     jQuery.ajax({
-            url: "http://localhost/api/copy/get_message",
+            url: "http://joaofelipes.duckdns.org/api/copy/get_message",
+            crossDomain: true,
             type: "GET",
-
-            contentType: 'application/json; charset=utf-8',
+            dataType: "application/x-www-form-urlencoded",
             success: function(resultData) {
                     $("#message").val(resultData)
             },
             error : function(jqXHR, textStatus, errorThrown) {
             },
-
             timeout: 120000,
     });
+}
 
-
+$( document ).ready(function(){
+    $( ".btnok" ).on( "click", submitMessage );
+    $( ".btnget" ).on( "click", getMessage );
 });
 
 
