@@ -21,9 +21,10 @@ function getMessage() {
             url: "http://joaofelipes.duckdns.org/api/copy/get_message",
             crossDomain: true,
             type: "GET",
-            dataType: "application/x-www-form-urlencoded",
+            contentType: 'application/json; charset=utf-8',
             success: function(resultData) {
-                    $("#message").val(resultData)
+                    $("#message").val(resultData);
+                    //console.log(resultData);
             },
             error : function(jqXHR, textStatus, errorThrown) {
             },
