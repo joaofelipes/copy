@@ -9,7 +9,23 @@
   	<link rel="stylesheet" href="css/bootstrap.min.css"/>
   	<script src="js/jquery-3.1.1.min.js"></script>
   	<script src="js/bootstrap.min.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
   	<script src="js/script.js"></script>
+  	<script>
+	// Initialize Firebase
+	const config = {
+		apiKey: "AIzaSyADPtW7A2z7ExGDvz4oEZDV1NgW5LQ6hjY",
+		authDomain: "project-two-58a58.firebaseapp.com",
+		databaseURL: "https://project-two-58a58.firebaseio.com",
+		projectId: "project-two-58a58",
+		storageBucket: "project-two-58a58.appspot.com",
+		messagingSenderId: "692736771667"
+	};
+	const dbsettings = {timestampsInSnapshots: true};
+	var defaultApp = firebase.initializeApp(config);
+	const db = firebase.firestore();
+	db.settings(dbsettings);
+</script>
 </head>
 <body>
 	<div id="main" class="container-fluid">

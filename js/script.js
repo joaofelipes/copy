@@ -1,38 +1,24 @@
 function submitMessage() {
-          jQuery.support.cors = true;
-          $.ajax({
-            url: "http://joaofelipes.duckdns.org/api/copy/send_message",
-            crossDomain: true,
-            type: "POST",
-            data: { message: $("#message").val() },
-            dataType: "application/x-www-form-urlencoded",
-            success: function (response) {
-                var resp = JSON.parse(response)
-                console.log(resp.status);
-            },
-            error: function (xhr, status) {
-                console.log("Error: " + xhr.status);
-            }
-        });
-}
+    const currentTime = firebase.firestore.FieldValue.serverTimestamp();
+    db.collection("TextPieces").add({
+        date: currentTime,
+        text: $("#message").val()
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
+    });
+ }
 
 function getMessage() {
-    jQuery.ajax({
-            url: "http://joaofelipes.duckdns.org/api/copy/get_message",
-            crossDomain: true,
-            type: "GET",
-            cache: false,
-            contentType: 'application/json; charset=utf-8',
-            success: function(resultData) {
-                    $("#message").val(resultData);
-                    console.log('Received chars:' + resultData.length);
-            },
-            error : function(jqXHR, textStatus, errorThrown) {
-                        console.log('Status: ' + textStatus);
-                        console.log('Error: ' + errorThrown); 
-            },
-            timeout: 120000,
-    });
+    var resultData;
+    db.collection("TextPieces").orderBy("date", "desc").limit(1).get().then(function(results) {
+        results.forEach(function(doc) {
+            $("#message").val(doc.data().text);
+        });
+    });;
 }
 
 $( document ).ready(function(){
