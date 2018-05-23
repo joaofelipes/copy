@@ -1,6 +1,8 @@
+
 .page-content{
     padding-left: 10px;
     padding-right: 20px;
+    text-align: center;
 }
 
 .mytextarea  {
@@ -13,4 +15,9 @@
     outline-width: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+}
+
+.spacer {
+    display: inline-block;
+    padding: 0 0 140 140;
 }
