@@ -1,12 +1,16 @@
-.custom-container {
-    padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+.page-content{
+    padding-left: 10px;
+    padding-right: 20px;
 }
 
-
-.custom-textarea {
-    padding: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+.mytextarea  {
+    border: 1px solid #b7bbbd !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 15px;
+    padding: 4px !important;
+    width: 100%;
+    outline-width: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
