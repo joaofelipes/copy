@@ -43,9 +43,17 @@
 		  <div class="mdl-layout-spacer"></div>
 		  <!-- Navigation. We hide it in small screens. -->
 		  <nav class="mdl-navigation mdl-layout--large-screen-only">
+		  	<a class="mdl-navigation__link" href="">Link</a>
 		  </nav>
 		</div>
 	  </header>
+	  <div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">About</span>
+		<nav class="mdl-navigation">
+		  <a class="mdl-navigation__link" href="https://joaofelipes.duckdns.org/">Author</a>
+		  <a class="mdl-navigation__link" href="https://github.com/joaofelipes/copy">Source Code</a>
+		</nav>
+	  </div>	  
 	  <main class="mdl-layout__content mdl-color--purple-50">
 		<div class="page-content">
 
@@ -57,11 +65,13 @@
   					Save Text
 				</button>
 
-				<div class="spacer"></div>
+				<span class="spacer"/>
 
 				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" id=btnget>
 				   Get Text 
 				</button>
+
+				<span class="spacer"/>
 
 				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="btncopy" name="btncopy">
 				  Copy All
